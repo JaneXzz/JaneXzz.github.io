@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -104,7 +104,7 @@
 </ol>
 <p>2.1 客户端请求消息由四个部分组成：请求行（request line）、请求头部（header）、空行和请求数据。</p>
 <p>例如（客户端请求消息）：</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">POST</span> <span class="string">/weather/pb/widget</span> HTTP/1.1</div><div class="line"><span class="attribute">Host</span>: v1.weather.moji.com</div><div class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded</div><div class="line"><span class="attribute">Connection</span>: keep-alive</div><div class="line"><span class="attribute">Accept</span>: */*</div><div class="line"><span class="attribute">User-Agent</span>: %E5%A2%A8%E8%BF%B9%E5%A4%A9%E6%B0%94-%E7%8E%B0%E5%9C%A8/5006020402 CFNetwork/808.0.2 Darwin/16.0.0</div><div class="line"><span class="attribute">Accept-Language</span>: zh-cn</div><div class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</div><div class="line"><span class="attribute">Content-Length</span>: 586</div><div class="line"></div><div class="line"><span class="undefined">&#123;</span></div><div class="line">"common" : &#123;</div><div class="line">"unix" : "1488542776640.153",</div><div class="line">"uid" : 658944032,</div><div class="line">.....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">POST</span> <span class="string">/weather/pb/widget</span> HTTP/1.1</div><div class="line"><span class="attribute">Host</span>: v1.weather.moji.com</div><div class="line"><span class="attribute">Content-Type</span>: application/x-www-form-urlencoded</div><div class="line"><span class="attribute">Connection</span>: keep-alive</div><div class="line"><span class="attribute">Accept</span>: */*</div><div class="line"><span class="attribute">User-Agent</span>: %E5%A2%A8%E8%BF%B9%E5%A4%A9%E6%B0%94-%E7%8E%B0%E5%9C%A8/5006020402 CFNetwork/808.0.2 Darwin/16.0.0</div><div class="line"><span class="attribute">Accept-Language</span>: zh-cn</div><div class="line"><span class="attribute">Accept-Encoding</span>: gzip, deflate</div><div class="line"><span class="attribute">Content-Length</span>: 586</div><div class="line"></div><div class="line"><span class="bash">&#123;</span></div><div class="line"><span class="string">"common"</span> : &#123;</div><div class="line"><span class="string">"unix"</span> : <span class="string">"1488542776640.153"</span>,</div><div class="line"><span class="string">"uid"</span> : 658944032,</div><div class="line">.....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>以上可以看出</p>
 <p>请求行（request line）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">POST /weather/pb/widget HTTP/1.1</div></pre></td></tr></table></figure></p>
 <p>请求头部（header）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Host: v1.weather.moji.com</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">Connection: keep-alive</div><div class="line">Accept: */*</div><div class="line">User-Agent: %E5%A2%A8%E8%BF%B9%E5%A4%A9%E6%B0%94-%E7%8E%B0%E5%9C%A8/5006020402 CFNetwork/808.0.2 Darwin/16.0.0</div><div class="line">Accept-Language: zh-cn</div><div class="line">Accept-Encoding: gzip, deflate</div><div class="line">Content-Length: 586</div></pre></td></tr></table></figure></p>
@@ -112,7 +112,7 @@
 <p>空行：请求数据和请求头部之间</p>
 <p>2.2  服务器也有四部分组成：状态行、消息报头、空行和响应正文。</p>
 <p>例如（服务器响应消息）：</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 <span class="number">200</span> OK</div><div class="line"><span class="attribute">Server</span>: MJWS/Weather3.1</div><div class="line"><span class="attribute">Date</span>: Wed, 15 Mar 2017 07:32:24 GMT</div><div class="line"><span class="attribute">Content-Length</span>: 4139</div><div class="line"><span class="attribute">Connection</span>: keep-alive</div><div class="line"></div><div class="line"><span class="undefined">¥å°äº ((0ú8B	è¥¿åé£Jæå¼±PÀìóîÙVXÚÚVbä¸é</span></div><div class="line">å¹´äºæåå</div><div class="line">«hpÀ×ÚVz2ç¥å¾®åå||ç¥å¾®ååï¼è¿æ¯è®èéçã @ ¢025ªæ¼å¤æ¸©å·®15â²æ³¨æéæ¶å¢åè¡£ç©ãº$4Âtåäº¬å¸ï¼ä»å¤å°æå¤©ï¼å¤äºâ</div><div class="line">ï¼2~17âï¼åé£è½¬åé£3çº§ï¼ç©ºæ° è¯ï¼æå¤©éè¡å°¾å·ï¼2å7ãÊ8</div></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 <span class="number">200</span> OK</div><div class="line"><span class="attribute">Server</span>: MJWS/Weather3.1</div><div class="line"><span class="attribute">Date</span>: Wed, 15 Mar 2017 07:32:24 GMT</div><div class="line"><span class="attribute">Content-Length</span>: 4139</div><div class="line"><span class="attribute">Connection</span>: keep-alive</div><div class="line"></div><div class="line"><span class="bash">¥å°äº ((0ú8B	è¥¿åé£Jæå¼±PÀìóîÙVXÚÚVbä¸é</span></div><div class="line">å¹´äºæåå</div><div class="line">«hpÀ×ÚVz2ç¥å¾®åå||ç¥å¾®ååï¼è¿æ¯è®èéçã @ ¢025ªæ¼å¤æ¸©å·®15â²æ³¨æéæ¶å¢åè¡£ç©ãº<span class="variable">$4</span>Âtåäº¬å¸ï¼ä»å¤å°æå¤©ï¼å¤äºâ</div><div class="line">ï¼2~17âï¼åé£è½¬åé£3çº§ï¼ç©ºæ° è¯ï¼æå¤©éè¡å°¾å·ï¼2å7ãÊ8</div></pre></td></tr></table></figure>
 <p>状态行：</p>
 <figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">HTTP/1.1 <span class="number">200</span> OK</div></pre></td></tr></table></figure>
 <p>消息报头:</p>
@@ -286,7 +286,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/http/" data-id="cj3o1grrs0000rzfys5jxuyw5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/http/" data-id="cj3o1o0wz0001vofy9xwvmoyb" class="article-share-link">Delen</a>
       
       
     </footer>
@@ -297,7 +297,7 @@
   
   
     <a href="/2017/06/08/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ouder</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -320,7 +320,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archieven</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
     </div>
@@ -330,7 +330,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Recente berichten</h3>
     <div class="widget">
       <ul>
         

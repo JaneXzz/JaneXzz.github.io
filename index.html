@@ -65,6 +65,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo配置GitHub" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/08/hexo配置GitHub/" class="article-date">
+  <time datetime="2017-06-08T09:46:24.000Z" itemprop="datePublished">2017-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/08/hexo配置GitHub/">hexo配置GitHub</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看之前要先说明:如果出现错误请自行百度,谷歌😏</p>
+<h2 id="建立-Repository"><a href="#建立-Repository" class="headerlink" title="建立 Repository"></a>建立 Repository</h2><ol>
+<li>在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法.</li>
+<li><p>打开_config.yml翻到最后修改注意 [:后面要有空格]</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/JaneXzz/JaneXzz.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>执行如下命令才能使用git部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myblog $ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行配置命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>5.最后在浏览器中执行<a href="https://janexzz.github.io" target="_blank" rel="external">https://janexzz.github.io</a>就可以使用了!其实挺简单(如果没有错误的情况下😆😆)!</p>
+<h2 id="修改或添加内容"><a href="#修改或添加内容" class="headerlink" title="修改或添加内容"></a>修改或添加内容</h2><ol>
+<li><p>查看本地添加或修改(浏览器运行<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo generate</div><div class="line">myblog $ hexo server</div></pre></td></tr></table></figure>
+</li>
+<li><p>git中每次添加或修改博客内容的时候都要执行以下步骤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo clean</div><div class="line">myblog $ hexo generate</div><div class="line">myblog $ hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>之后刷新浏览器就可以看到更新的内容(浏览器运行<a href="https://janexzz.github.io" target="_blank" rel="external">https://janexzz.github.io</a>)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/08/hexo配置GitHub/" data-id="cj3o9fu840002yffyy3ifmvne" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo搭建" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/08/hexo搭建/" class="article-date">
@@ -79,7 +138,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/08/hexo搭建/">hexo搭建(上)</a>
+      <a class="article-title" href="/2017/06/08/hexo搭建/">hexo搭建</a>
     </h1>
   
 
@@ -128,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/hexo搭建/" data-id="cj3o8g0yq0001nrfyq76z5u13" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/hexo搭建/" data-id="cj3o9fu820001yffyj9uqn4kk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -361,7 +420,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/http/" data-id="cj3o8g0ys0002nrfyucv7mw42" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/http/" data-id="cj3o9fu860003yffyh0lehww3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -406,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/08/hello-world/" data-id="cj3o8g0ym0000nrfygw5hh4y5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/08/hello-world/" data-id="cj3o9fu7x0000yffy1xe06u6m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +505,11 @@
       <ul>
         
           <li>
-            <a href="/2017/06/08/hexo搭建/">hexo搭建(上)</a>
+            <a href="/2017/06/08/hexo配置GitHub/">hexo配置GitHub</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/08/hexo搭建/">hexo搭建</a>
           </li>
         
           <li>

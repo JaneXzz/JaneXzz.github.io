@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo配置GitHub | Jane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="看之前要先说明:如果出现错误请自行百度,谷歌😏 建立 Repository 在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法. 打开_config.yml翻到最后修改注意 [:后面要有空格] 1234deploy:  type: git  repository: https://github.com/JaneXzz/JaneXzz.githu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo配置GitHub">
+<meta property="og:url" content="http://yoursite.com/2017/06/08/hexo配置GitHub/index.html">
+<meta property="og:site_name" content="Jane">
+<meta property="og:description" content="看之前要先说明:如果出现错误请自行百度,谷歌😏 建立 Repository 在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法. 打开_config.yml翻到最后修改注意 [:后面要有空格] 1234deploy:  type: git  repository: https://github.com/JaneXzz/JaneXzz.githu">
+<meta property="og:updated_time" content="2017-06-08T10:04:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo配置GitHub">
+<meta name="twitter:description" content="看之前要先说明:如果出现错误请自行百度,谷歌😏 建立 Repository 在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法. 打开_config.yml翻到最后修改注意 [:后面要有空格] 1234deploy:  type: git  repository: https://github.com/JaneXzz/JaneXzz.githu">
+  
+    <link rel="alternate" href="/atom.xml" title="Jane" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jane</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">许珍珍</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo配置GitHub" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/08/hexo配置GitHub/" class="article-date">
+  <time datetime="2017-06-08T09:46:24.000Z" itemprop="datePublished">2017-06-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo配置GitHub
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看之前要先说明:如果出现错误请自行百度,谷歌😏</p>
+<h2 id="建立-Repository"><a href="#建立-Repository" class="headerlink" title="建立 Repository"></a>建立 Repository</h2><ol>
+<li>在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法.</li>
+<li><p>打开_config.yml翻到最后修改注意 [:后面要有空格]</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/JaneXzz/JaneXzz.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>执行如下命令才能使用git部署</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myblog $ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行配置命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>5.最后在浏览器中执行<a href="https://janexzz.github.io" target="_blank" rel="external">https://janexzz.github.io</a>就可以使用了!其实挺简单(如果没有错误的情况下😆😆)!</p>
+<h2 id="修改或添加内容"><a href="#修改或添加内容" class="headerlink" title="修改或添加内容"></a>修改或添加内容</h2><ol>
+<li><p>查看本地添加或修改(浏览器运行<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo generate</div><div class="line">myblog $ hexo server</div></pre></td></tr></table></figure>
+</li>
+<li><p>git中每次添加或修改博客内容的时候都要执行以下步骤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo clean</div><div class="line">myblog $ hexo generate</div><div class="line">myblog $ hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>之后刷新浏览器就可以看到更新的内容(浏览器运行<a href="https://janexzz.github.io" target="_blank" rel="external">https://janexzz.github.io</a>)</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/08/hexo配置GitHub/" data-id="cj3o9fu840002yffyy3ifmvne" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/08/hexo搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo搭建</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/08/hexo配置GitHub/">hexo配置GitHub</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/08/hexo搭建/">hexo搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/08/http/">http</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/08/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

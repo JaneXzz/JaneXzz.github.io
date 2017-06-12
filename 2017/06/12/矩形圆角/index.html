@@ -93,16 +93,16 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425// 1. 算出这个 imageview 的大小CGRect rect = CGRectMake(0, 0, size.width, size.height);// 2. 创建不带 alpha 通道的上下文UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScr">
+<meta name="description" content="画一个画布出来">
 <meta property="og:type" content="article">
 <meta property="og:title" content="矩形圆角">
 <meta property="og:url" content="http://yoursite.com/2017/06/12/矩形圆角/index.html">
 <meta property="og:site_name" content="私人订制">
-<meta property="og:description" content="12345678910111213141516171819202122232425// 1. 算出这个 imageview 的大小CGRect rect = CGRectMake(0, 0, size.width, size.height);// 2. 创建不带 alpha 通道的上下文UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScr">
-<meta property="og:updated_time" content="2017-06-12T07:54:47.000Z">
+<meta property="og:description" content="画一个画布出来">
+<meta property="og:updated_time" content="2017-06-12T08:03:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="矩形圆角">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425// 1. 算出这个 imageview 的大小CGRect rect = CGRectMake(0, 0, size.width, size.height);// 2. 创建不带 alpha 通道的上下文UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScr">
+<meta name="twitter:description" content="画一个画布出来">
 
 
 
@@ -320,7 +320,8 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 1. 算出这个 imageview 的大小</div><div class="line">CGRect rect = CGRectMake(0, 0, size.width, size.height);</div><div class="line"></div><div class="line">// 2. 创建不带 alpha 通道的上下文</div><div class="line">UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScreen mainScreen] scale]);</div><div class="line">CGContextRef ref = UIGraphicsGetCurrentContext();</div><div class="line"></div><div class="line">// 3. 把图片画到这个这个画布上</div><div class="line">// 3.1 绘制圆形区域(此处根据宽度来设置)</div><div class="line">UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];</div><div class="line">CGContextAddPath(UIGraphicsGetCurrentContext(), path.CGPath);</div><div class="line"></div><div class="line">// 3.2 裁剪绘图区域</div><div class="line">CGContextClip(ref);</div><div class="line"></div><div class="line">// 3.3 绘制图片</div><div class="line">[self drawInRect:CGRectMake(0, 0, size.width, size.height)];</div><div class="line"></div><div class="line">// 4. 从画布上把图取出来</div><div class="line">UIImage *output = UIGraphicsGetImageFromCurrentImageContext();</div><div class="line"></div><div class="line">// 5. 关闭图形上下文</div><div class="line">UIGraphicsEndImageContext();</div><div class="line"></div><div class="line">return output;</div></pre></td></tr></table></figure>
+        <p>画一个画布出来<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 1. 算出这个 imageview 的大小</div><div class="line">CGRect rect = CGRectMake(0, 0, size.width, size.height);</div><div class="line"></div><div class="line">// 2. 创建不带 alpha 通道的上下文</div><div class="line">UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScreen mainScreen] scale]);</div><div class="line">CGContextRef ref = UIGraphicsGetCurrentContext();</div><div class="line"></div><div class="line">// 3. 把图片画到这个这个画布上</div><div class="line">// 3.1 绘制圆形区域(此处根据宽度来设置)</div><div class="line">UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(radius, radius)];</div><div class="line">CGContextAddPath(UIGraphicsGetCurrentContext(), path.CGPath);</div><div class="line"></div><div class="line">// 3.2 裁剪绘图区域</div><div class="line">CGContextClip(ref);</div><div class="line"></div><div class="line">// 3.3 绘制图片</div><div class="line">[self drawInRect:CGRectMake(0, 0, size.width, size.height)];</div><div class="line"></div><div class="line">// 4. 从画布上把图取出来</div><div class="line">UIImage *output = UIGraphicsGetImageFromCurrentImageContext();</div><div class="line"></div><div class="line">// 5. 关闭图形上下文</div><div class="line">UIGraphicsEndImageContext();</div><div class="line"></div><div class="line">return output;</div></pre></td></tr></table></figure>
 
       
     </div>

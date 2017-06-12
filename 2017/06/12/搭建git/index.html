@@ -93,16 +93,21 @@
 
 
 
-<meta name="description" content="看之前要先说明:如果出现错误请自行百度,谷歌😏 建立 Repository 在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法. 打开_config.yml翻到最后修改注意 [:后面要有空格] 1234deploy:  type: git  repository: https://github.com/JaneXzz/JaneXzz.githu">
+<meta name="description" content="1. 输入 ssh-keygen 2. 切到.ssh 下:cd .ssh/3. 查看.ssh下的目录 : .ssh ll 4. 获取秘钥: cat id_rsa.pubssh-rsa AAAAB3NzaC1yc2EAAA*9tlsqHeVp Jane@bogon 5. 将秘钥添加ssh上 6. 代码拷贝到本地:git clone  ssh://hahaha@111.111.1.111:XXXXX/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo配置GitHub">
-<meta property="og:url" content="http://yoursite.com/2017/06/08/hexo配置GitHub/index.html">
+<meta property="og:title" content="搭建git">
+<meta property="og:url" content="http://yoursite.com/2017/06/12/搭建git/index.html">
 <meta property="og:site_name" content="私人订制">
-<meta property="og:description" content="看之前要先说明:如果出现错误请自行百度,谷歌😏 建立 Repository 在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法. 打开_config.yml翻到最后修改注意 [:后面要有空格] 1234deploy:  type: git  repository: https://github.com/JaneXzz/JaneXzz.githu">
-<meta property="og:updated_time" content="2017-06-12T07:50:57.000Z">
+<meta property="og:description" content="1. 输入 ssh-keygen 2. 切到.ssh 下:cd .ssh/3. 查看.ssh下的目录 : .ssh ll 4. 获取秘钥: cat id_rsa.pubssh-rsa AAAAB3NzaC1yc2EAAA*9tlsqHeVp Jane@bogon 5. 将秘钥添加ssh上 6. 代码拷贝到本地:git clone  ssh://hahaha@111.111.1.111:XXXXX/">
+<meta property="og:image" content="http://orfg0onvv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-17%20%E4%B8%8B%E5%8D%882.34.17.png">
+<meta property="og:image" content="http://orfg0onvv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-17%20%E4%B8%8B%E5%8D%882.35.23.png">
+<meta property="og:image" content="http://orfg0onvv.bkt.clouddn.com/3B899526-37D6-4F8F-848A-F2F8CC596D94.png">
+<meta property="og:image" content="http://orfg0onvv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-17%20%E4%B8%8B%E5%8D%882.39.10.png">
+<meta property="og:updated_time" content="2017-06-12T09:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo配置GitHub">
-<meta name="twitter:description" content="看之前要先说明:如果出现错误请自行百度,谷歌😏 建立 Repository 在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法. 打开_config.yml翻到最后修改注意 [:后面要有空格] 1234deploy:  type: git  repository: https://github.com/JaneXzz/JaneXzz.githu">
+<meta name="twitter:title" content="搭建git">
+<meta name="twitter:description" content="1. 输入 ssh-keygen 2. 切到.ssh 下:cd .ssh/3. 查看.ssh下的目录 : .ssh ll 4. 获取秘钥: cat id_rsa.pubssh-rsa AAAAB3NzaC1yc2EAAA*9tlsqHeVp Jane@bogon 5. 将秘钥添加ssh上 6. 代码拷贝到本地:git clone  ssh://hahaha@111.111.1.111:XXXXX/">
+<meta name="twitter:image" content="http://orfg0onvv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-17%20%E4%B8%8B%E5%8D%882.34.17.png">
 
 
 
@@ -130,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/08/hexo配置GitHub/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/12/搭建git/"/>
 
 
 
 
 
-  <title>hexo配置GitHub | 私人订制</title>
+  <title>搭建git | 私人订制</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +261,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/08/hexo配置GitHub/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/12/搭建git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jane">
@@ -273,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo配置GitHub</h1>
+          <h1 class="post-title" itemprop="name headline">搭建git</h1>
         
 
         <div class="post-meta">
@@ -285,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-08T17:46:24+08:00">
-                2017-06-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T16:40:28+08:00">
+                2017-06-12
               </time>
             
 
@@ -320,31 +325,11 @@
       
 
       
-        <p>看之前要先说明:如果出现错误请自行百度,谷歌😏</p>
-<h2 id="建立-Repository"><a href="#建立-Repository" class="headerlink" title="建立 Repository"></a>建立 Repository</h2><ol>
-<li>在你自己的 git 上建立与你用户名对应的仓库,仓库名称必须为[用户名.gitthub.io]固定写法.</li>
-<li><p>打开_config.yml翻到最后修改注意 [:后面要有空格]</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">git</span></div><div class="line"><span class="attr">  repository:</span> <span class="attr">https://github.com/JaneXzz/JaneXzz.github.io.git</span></div><div class="line"><span class="attr">  branch:</span> <span class="string">master</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>执行如下命令才能使用git部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myblog $ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-</li>
-<li><p>执行配置命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo deploy</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>5.最后在浏览器中执行<a href="https://janexzz.github.io" target="_blank" rel="external">https://janexzz.github.io</a>就可以使用了!其实挺简单(如果没有错误的情况下😆😆)!</p>
-<h2 id="修改或添加内容"><a href="#修改或添加内容" class="headerlink" title="修改或添加内容"></a>修改或添加内容</h2><ol>
-<li><p>查看本地添加或修改(浏览器运行<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo generate</div><div class="line">myblog $ hexo server</div></pre></td></tr></table></figure>
-</li>
-<li><p>git中每次添加或修改博客内容的时候都要执行以下步骤</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">myblog $ hexo clean</div><div class="line">myblog $ hexo generate</div><div class="line">myblog $ hexo deploy</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>之后刷新浏览器就可以看到更新的内容(浏览器运行<a href="https://janexzz.github.io" target="_blank" rel="external">https://janexzz.github.io</a>)</p>
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo new &quot;postName&quot; #新建文章</div><div class="line">hexo new page &quot;pageName&quot; #新建页面</div><div class="line">hexo generate #生成静态页面至public目录</div><div class="line">hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）</div><div class="line">hexo deploy #将.deploy目录部署到GitHub</div><div class="line">hexo help  #查看帮助</div><div class="line">hexo version  #查看Hexo的版本</div></pre></td></tr></table></figure>
-
+        <h4 id="1-输入-ssh-keygen"><a href="#1-输入-ssh-keygen" class="headerlink" title="1. 输入 ssh-keygen"></a>1. 输入 ssh-keygen</h4><p><img src="http://orfg0onvv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-17%20%E4%B8%8B%E5%8D%882.34.17.png" alt="ssh"></p>
+<h4 id="2-切到-ssh-下-cd-ssh"><a href="#2-切到-ssh-下-cd-ssh" class="headerlink" title="2. 切到.ssh 下:cd .ssh/"></a>2. 切到.ssh 下:cd .ssh/</h4><h4 id="3-查看-ssh下的目录-ssh-ll"><a href="#3-查看-ssh下的目录-ssh-ll" class="headerlink" title="3. 查看.ssh下的目录 : .ssh ll"></a>3. 查看.ssh下的目录 : .ssh ll</h4><p><img src="http://orfg0onvv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-17%20%E4%B8%8B%E5%8D%882.35.23.png" alt="ssh"></p>
+<h4 id="4-获取秘钥-cat-id-rsa-pub"><a href="#4-获取秘钥-cat-id-rsa-pub" class="headerlink" title="4. 获取秘钥: cat id_rsa.pub"></a>4. 获取秘钥: cat id_rsa.pub</h4><p><img src="http://orfg0onvv.bkt.clouddn.com/3B899526-37D6-4F8F-848A-F2F8CC596D94.png" alt="ssh"><br>ssh-rsa AAAAB3NzaC1yc2EAAA<strong><strong>*</strong></strong>9tlsqHeVp Jane@bogon</p>
+<h4 id="5-将秘钥添加ssh上"><a href="#5-将秘钥添加ssh上" class="headerlink" title="5. 将秘钥添加ssh上"></a>5. 将秘钥添加ssh上</h4><p><img src="http://orfg0onvv.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-08-17%20%E4%B8%8B%E5%8D%882.39.10.png" alt="ssh"></p>
+<h4 id="6-代码拷贝到本地-git-clone-ssh-hahaha-111-111-1-111-XXXXX-www-iOS-App-git"><a href="#6-代码拷贝到本地-git-clone-ssh-hahaha-111-111-1-111-XXXXX-www-iOS-App-git" class="headerlink" title="6. 代码拷贝到本地:git clone  ssh://hahaha@111.111.1.111:XXXXX/www/iOS/App.git"></a>6. 代码拷贝到本地:git clone  ssh://hahaha@111.111.1.111:XXXXX/www/iOS/App.git</h4>
       
     </div>
 
@@ -380,8 +365,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/08/hexo搭建/" rel="next" title="hexo搭建">
-                <i class="fa fa-chevron-left"></i> hexo搭建
+              <a href="/2017/06/12/coreText/" rel="next" title="coreText">
+                <i class="fa fa-chevron-left"></i> coreText
               </a>
             
           </div>
@@ -389,10 +374,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/12/矩形圆角/" rel="prev" title="矩形圆角">
-                矩形圆角 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -503,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#建立-Repository"><span class="nav-number">1.</span> <span class="nav-text">建立 Repository</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改或添加内容"><span class="nav-number">2.</span> <span class="nav-text">修改或添加内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">2.0.1.</span> <span class="nav-text">常用命令</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-输入-ssh-keygen"><span class="nav-number">1.</span> <span class="nav-text">1. 输入 ssh-keygen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-切到-ssh-下-cd-ssh"><span class="nav-number">2.</span> <span class="nav-text">2. 切到.ssh 下:cd .ssh/</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查看-ssh下的目录-ssh-ll"><span class="nav-number">3.</span> <span class="nav-text">3. 查看.ssh下的目录 : .ssh ll</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-获取秘钥-cat-id-rsa-pub"><span class="nav-number">4.</span> <span class="nav-text">4. 获取秘钥: cat id_rsa.pub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-将秘钥添加ssh上"><span class="nav-number">5.</span> <span class="nav-text">5. 将秘钥添加ssh上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-代码拷贝到本地-git-clone-ssh-hahaha-111-111-1-111-XXXXX-www-iOS-App-git"><span class="nav-number">6.</span> <span class="nav-text">6. 代码拷贝到本地:git clone  ssh://hahaha@111.111.1.111:XXXXX/www/iOS/App.git</span></a></li></ol></div>
             
 
           </div>

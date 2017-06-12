@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="沙盒机制IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。  每个应用程序都在自己的沙盒内 不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容 应用程序向外请求或接收数据都需要经过权限认证  沙盒目录结构  Documents 目录：您应该将所有">
+<meta name="description" content="沙盒机制IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。  每个应用程序都在自己的沙盒内 不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容 应用程序向外请求或接收数据都需要经过权限认证">
 <meta property="og:type" content="article">
 <meta property="og:title" content="沙盒机制">
 <meta property="og:url" content="http://yoursite.com/2017/06/12/沙盒机制/index.html">
 <meta property="og:site_name" content="私人订制">
-<meta property="og:description" content="沙盒机制IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。  每个应用程序都在自己的沙盒内 不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容 应用程序向外请求或接收数据都需要经过权限认证  沙盒目录结构  Documents 目录：您应该将所有">
+<meta property="og:description" content="沙盒机制IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。  每个应用程序都在自己的沙盒内 不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容 应用程序向外请求或接收数据都需要经过权限认证">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/550988-e380ff054e24eb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-06-12T10:21:36.000Z">
+<meta property="og:updated_time" content="2017-06-12T11:15:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="沙盒机制">
-<meta name="twitter:description" content="沙盒机制IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。  每个应用程序都在自己的沙盒内 不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容 应用程序向外请求或接收数据都需要经过权限认证  沙盒目录结构  Documents 目录：您应该将所有">
+<meta name="twitter:description" content="沙盒机制IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。  每个应用程序都在自己的沙盒内 不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容 应用程序向外请求或接收数据都需要经过权限认证">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/550988-e380ff054e24eb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -322,20 +322,21 @@
       
 
       
-        <h4 id="沙盒机制"><a href="#沙盒机制" class="headerlink" title="沙盒机制"></a>沙盒机制</h4><p>IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。</p>
+        <h2 id="沙盒机制"><a href="#沙盒机制" class="headerlink" title="沙盒机制"></a>沙盒机制</h2><p>IOS中的沙盒机制（SandBox）是一种安全体系，它规定了应用程序只能在为该应用创建的文件夹内读取文件，不可以访问其他地方的内容。所有的非代码文件都保存在这个地方，比如图片、声音、属性列表和文本文件等。</p>
 <ol>
 <li>每个应用程序都在自己的沙盒内</li>
 <li>不能随意跨越自己的沙盒去访问别的应用程序沙盒的内容</li>
 <li>应用程序向外请求或接收数据都需要经过权限认证</li>
 </ol>
-<h4 id="沙盒目录结构"><a href="#沙盒目录结构" class="headerlink" title="沙盒目录结构"></a>沙盒目录结构</h4><p><img src="http://upload-images.jianshu.io/upload_images/550988-e380ff054e24eb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录"></p>
+<a id="more"></a>
+<h2 id="沙盒目录结构"><a href="#沙盒目录结构" class="headerlink" title="沙盒目录结构"></a>沙盒目录结构</h2><p><img src="http://upload-images.jianshu.io/upload_images/550988-e380ff054e24eb8a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="目录"></p>
 <ol>
 <li>Documents 目录：您应该将所有的应用程序数据文件写入到这个目录下。这个目录用于存储用户数据。该路径可通过配置实现iTunes共享文件。可被iTunes备份。</li>
 <li>AppName.app 目录：这是应用程序的程序包目录，包含应用程序的本身。由于应用程序必须经过签名，所以您在运行时不能对这个目录中的内容进行修改，否则可能会使应用程序无法启动。</li>
 <li>Library 目录：这个目录下有两个子目录：<br>Preferences 目录：包含应用程序的偏好设置文件。您不应该直接创建偏好设置文件，而是应该使用NSUserDefaults类来取得和设置应用程序的偏好.<br>Caches 目录：用于存放应用程序专用的支持文件，保存应用程序再次启动过程中需要的信息。可创建子文件夹。可以用来放置您希望被备份但不希望被用户看到的数据。该路径下的文件夹，除Caches以外，都会被iTunes备份。</li>
 <li>tmp 目录：这个目录用于存放临时文件，保存应用程序再次启动过程中不需要的信息。该路径下的文件不会被iTunes备份。</li>
 </ol>
-<h4 id="获取沙盒路径"><a href="#获取沙盒路径" class="headerlink" title="获取沙盒路径"></a>获取沙盒路径</h4><ol>
+<h2 id="获取沙盒路径"><a href="#获取沙盒路径" class="headerlink" title="获取沙盒路径"></a>获取沙盒路径</h2><ol>
 <li><p>获取目录路径的方法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">// 获取沙盒主目录路径</div><div class="line">NSString *homeDir = NSHomeDirectory();</div><div class="line">// 获取Documents目录路径</div><div class="line">NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];</div><div class="line">// 获取Library的目录路径</div><div class="line">NSString *libDir = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];</div><div class="line">// 获取Caches目录路径</div><div class="line">NSString *cachesDir = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject];</div><div class="line">// 获取tmp目录路径</div><div class="line">NSString *tmpDir =  NSTemporaryDirectory();</div></pre></td></tr></table></figure>
 </li>
@@ -343,7 +344,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">NSLog(@&quot;%@&quot;,[[NSBundle mainBundle] bundlePath]);</div><div class="line">NSString *imagePath = [[NSBundle mainBundle] pathForResource:@&quot;apple&quot; ofType:@&quot;png&quot;];</div><div class="line">UIImage *appleImage = [[UIImage alloc] initWithContentsOfFile:imagePath];</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);</div><div class="line"></div><div class="line">NSString *documentsDirectory = [paths objectAtIndex:0];  </div><div class="line">NSString *documents = documentsDirectory;</div><div class="line">NSFileManager *fileManager = [NSFileManager defaultManager];</div><div class="line">NSString *testDirectory = [documentsPath stringByAppendingPathComponent:@&quot;test&quot;];</div><div class="line">// 创建目录</div><div class="line">BOOL res=[fileManager createDirectoryAtPath:testDirectory withIntermediateDirectories:YES attributes:nil error:nil];</div><div class="line">if (res) &#123;  </div><div class="line">  NSLog(@&quot;文件夹创建成功&quot;);  </div><div class="line">&#125;else&#123;</div><div class="line">  NSLog(@&quot;文件夹创建失败&quot;);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><ol>
+<li>创建文件夹</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);</div><div class="line"></div><div class="line">NSString *documentsDirectory = [paths objectAtIndex:0];  </div><div class="line">NSString *documents = documentsDirectory;</div><div class="line">NSFileManager *fileManager = [NSFileManager defaultManager];</div><div class="line">NSString *testDirectory = [documentsPath stringByAppendingPathComponent:@&quot;test&quot;];</div><div class="line">// 创建目录</div><div class="line">BOOL res=[fileManager createDirectoryAtPath:testDirectory withIntermediateDirectories:YES attributes:nil error:nil];</div><div class="line">if (res) &#123;  </div><div class="line">  NSLog(@&quot;文件夹创建成功&quot;);  </div><div class="line">&#125;else&#123;</div><div class="line">  NSLog(@&quot;文件夹创建失败&quot;);  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -499,7 +503,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#沙盒机制"><span class="nav-number">1.</span> <span class="nav-text">沙盒机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#沙盒目录结构"><span class="nav-number">2.</span> <span class="nav-text">沙盒目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取沙盒路径"><span class="nav-number">3.</span> <span class="nav-text">获取沙盒路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建文件"><span class="nav-number">4.</span> <span class="nav-text">创建文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#沙盒机制"><span class="nav-number">1.</span> <span class="nav-text">沙盒机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#沙盒目录结构"><span class="nav-number">2.</span> <span class="nav-text">沙盒目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取沙盒路径"><span class="nav-number">3.</span> <span class="nav-text">获取沙盒路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作"><span class="nav-number">4.</span> <span class="nav-text">文件操作</span></a></li></ol></div>
             
 
           </div>

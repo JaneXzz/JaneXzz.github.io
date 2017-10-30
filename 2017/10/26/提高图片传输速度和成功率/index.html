@@ -1,0 +1,735 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="此篇文章的目的,就如名字所说为了提高图片上传的速度和成功率!我对原作者的文章进行了精简,同时将一些不明确的问题进行了注释说明 任务是旨在用最小的代价优化几大拥有数亿用户的现有产品，所以从一开始我们就将任务的主要发力点定格在终端传输策略的优化上，而尽量不改变前后台通信协议，也尽量不改变后台传输、存储策略。 作者原文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="提高图片传输速度和成功率">
+<meta property="og:url" content="http://yoursite.com/2017/10/26/提高图片传输速度和成功率/index.html">
+<meta property="og:site_name" content="私人订制">
+<meta property="og:description" content="此篇文章的目的,就如名字所说为了提高图片上传的速度和成功率!我对原作者的文章进行了精简,同时将一些不明确的问题进行了注释说明 任务是旨在用最小的代价优化几大拥有数亿用户的现有产品，所以从一开始我们就将任务的主要发力点定格在终端传输策略的优化上，而尽量不改变前后台通信协议，也尽量不改变后台传输、存储策略。 作者原文">
+<meta property="og:updated_time" content="2017-10-27T09:06:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="提高图片传输速度和成功率">
+<meta name="twitter:description" content="此篇文章的目的,就如名字所说为了提高图片上传的速度和成功率!我对原作者的文章进行了精简,同时将一些不明确的问题进行了注释说明 任务是旨在用最小的代价优化几大拥有数亿用户的现有产品，所以从一开始我们就将任务的主要发力点定格在终端传输策略的优化上，而尽量不改变前后台通信协议，也尽量不改变后台传输、存储策略。 作者原文">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/26/提高图片传输速度和成功率/"/>
+
+
+
+
+
+  <title>提高图片传输速度和成功率 | 私人订制</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">私人订制</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不积跬步无以至千里</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/26/提高图片传输速度和成功率/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jane">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="私人订制">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">提高图片传输速度和成功率</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-26T14:35:32+08:00">
+                2017-10-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>此篇文章的目的,就如名字所说为了提高图片上传的速度和成功率!我对原作者的文章进行了精简,同时将一些不明确的问题进行了注释说明</p>
+<p>任务是旨在用最小的代价优化几大拥有数亿用户的现有产品，所以从一开始我们就将任务的主要发力点定格在终端传输策略的优化上，而尽量不改变前后台通信协议，也尽量不改变后台传输、存储策略。</p>
+<p><a href="http://www.52im.net/thread-675-1-1.html" target="_blank" rel="external">作者原文</a></p>
+<a id="more"></a>
+<h1 id="优化方案主要需要考虑的点"><a href="#优化方案主要需要考虑的点" class="headerlink" title="优化方案主要需要考虑的点"></a>优化方案主要需要考虑的点</h1><ol>
+<li>必须分小片传输一个文件（图片)。</li>
+<li>不同类型的移动互联网下的分片初始大小应该有所不同。</li>
+<li>在上传一个文件（图片）的过程中，应当尽可能动态增大分片大小（例如，后一片是前一片的 N 倍），以减少分片数量</li>
+<li>确定每个分片是否要继续增大之前，要检查网络类型是否发生了变化，一旦跟前一片传输的网络变得不同，则新的一片不能继续增大而是转而用新网络类型下的初始分片大小进行传输。</li>
+<li>分片一旦传输失败，应当使用该网络下的初始分片大小进行重试。</li>
+<li>每个分片都有一定次数的失败重传机会，当一个分片的所有重传都失败了，才定义为图片传输失败。</li>
+<li>配合后台服务器能力，待用户手工再次重试失败传输的图片时，能断点续传。</li>
+</ol>
+<h2 id="1-必须分小片传输一个文件（图片）："><a href="#1-必须分小片传输一个文件（图片）：" class="headerlink" title="1.必须分小片传输一个文件（图片）："></a>1.必须分小片传输一个文件（图片）：</h2><ul>
+<li>若整个文件（图片）放在一个网络包里进行传输，一旦失败，就必须重传整个文件，这样给用户带来的流量浪费是巨大的.因而采用把一个文件分片的方式传输，则只需要在某一个分片失败后重传这一个分片.</li>
+<li>单个消息越大传输时越容易失败(若文件大小接近 0，则传输成功概率接近 100% ；而文件大小无穷大，则传输过程必然会失败)</li>
+</ul>
+<h2 id="2-不同类型的移动互联网下的分片初始大小应该有所不同："><a href="#2-不同类型的移动互联网下的分片初始大小应该有所不同：" class="headerlink" title="2.不同类型的移动互联网下的分片初始大小应该有所不同："></a>2.不同类型的移动互联网下的分片初始大小应该有所不同：</h2><ul>
+<li>不同移动互联网的带宽和稳定性的差异都很大，如 WiFi 和 2G，使用不同大小的初始分片应该能更好的适应对应类型的网络，但是至于每种网络下的初始分片到底多大，这需要进行实验。</li>
+</ul>
+<h2 id="3-在上传一个文件（图片）的过程中，应当尽可能动态增大分片大小（例如，后一片是前一片的-N-倍），以减少分片数量："><a href="#3-在上传一个文件（图片）的过程中，应当尽可能动态增大分片大小（例如，后一片是前一片的-N-倍），以减少分片数量：" class="headerlink" title="3.在上传一个文件（图片）的过程中，应当尽可能动态增大分片大小（例如，后一片是前一片的 N 倍），以减少分片数量："></a>3.在上传一个文件（图片）的过程中，应当尽可能动态增大分片大小（例如，后一片是前一片的 N 倍），以减少分片数量：</h2><ul>
+<li>分片动作会带来不少额外开销，如 C / S 两端拆分与合并分片的时间、传输时的额外流量（ HTTP 头等）、每个分片的 RTT 等等诸多开销，所以理论上传输同一个文件用的分片数量越少，应该额外开销越小。</li>
+</ul>
+<h2 id="4-确定每个分片是否要继续增大之前，要检查网络类型是否发生了变化，一旦跟前一片传输的网络变得不同，则新的一片不能继续增大而是转而用新网络类型下的初始分片大小进行传输："><a href="#4-确定每个分片是否要继续增大之前，要检查网络类型是否发生了变化，一旦跟前一片传输的网络变得不同，则新的一片不能继续增大而是转而用新网络类型下的初始分片大小进行传输：" class="headerlink" title="4.确定每个分片是否要继续增大之前，要检查网络类型是否发生了变化，一旦跟前一片传输的网络变得不同，则新的一片不能继续增大而是转而用新网络类型下的初始分片大小进行传输："></a>4.确定每个分片是否要继续增大之前，要检查网络类型是否发生了变化，一旦跟前一片传输的网络变得不同，则新的一片不能继续增大而是转而用新网络类型下的初始分片大小进行传输：</h2><ul>
+<li>移动互联网下，由于用户的“移动”而时长发生网络类型切换的事情（如， 3G 变 2.5G），一旦网络类型变了，其带宽、时延、稳定性等等因素都发生了很大的变化，所以需要分片大小需要“归零”，以迅速适应新的网络，减少失败的概率。</li>
+</ul>
+<h2 id="5-分片一旦传输失败，应当使用该网络下的初始分片大小进行重试："><a href="#5-分片一旦传输失败，应当使用该网络下的初始分片大小进行重试：" class="headerlink" title="5.分片一旦传输失败，应当使用该网络下的初始分片大小进行重试："></a>5.分片一旦传输失败，应当使用该网络下的初始分片大小进行重试：</h2><ul>
+<li>若网络类型并没有产生切换，但某分片传输失败了，则说明该网络的质量可能已经下降到不再适合传输这个大小的分片，会有较高再次失败的可能性，因此转而重新用该网络下的初始大小的分片进行重试，以提升重传成功概率、同时减少再次失败所带来的流量浪费。</li>
+</ul>
+<h1 id="需要解决的主要问题"><a href="#需要解决的主要问题" class="headerlink" title="需要解决的主要问题"></a>需要解决的主要问题</h1><ul>
+<li>关于”长连接”</li>
+<li>关于分片大小</li>
+<li>关于分片对于速度的影响</li>
+<li>关于分片传输成功率</li>
+<li>关于失败重传策略</li>
+</ul>
+<h2 id="1-关于”长连接”"><a href="#1-关于”长连接”" class="headerlink" title="1.关于”长连接”:"></a>1.关于”长连接”:</h2><ul>
+<li>问题: 每一个包含分片的 HTTP 请求都要进行一次 TCP 的 connection,移动互联网下的连接成本很高.如果运营商网络都支持 Keep-alive，则一个文件（图片）的多个分片传输仅需首个分片传输前建立一次 connection ；甚至，多个连续发送的图片都可以复用第一张图片建立好的连接</li>
+<li>答案: 运营商基本都支持长连接,有的时候时间间隔稍短的下一张图片甚至也可以复用上一张图片的连接。不必过分担心.</li>
+</ul>
+<h2 id="2-关于分片大小："><a href="#2-关于分片大小：" class="headerlink" title="2.关于分片大小："></a>2.关于分片大小：</h2><ul>
+<li>问题: 如果在传输过程中，后一片分片总是 N 倍于前一片分片的大小，那么，不同类型、不同质量的网络下是否存在最适合<br>的初始分片大小和最大分片大小？如果没有最大分片，岂不是越到后来传输失败的概率越大</li>
+<li>答案: 不同网络下的初试分片大小非常难确定，或者根本就不存在，但最好根据网络的理论带宽各自取一个较小的经验值；分片的大小上限则应该存在.</li>
+</ul>
+<h2 id="3-关于分片对于速度的影响："><a href="#3-关于分片对于速度的影响：" class="headerlink" title="3.关于分片对于速度的影响："></a>3.关于分片对于速度的影响：</h2><ul>
+<li>问题: 分包会不会对传输速度有影响</li>
+<li>答案: 找到当前网络的最大上线,根据这个上线去发送分片.就能将分片带来的速度下降体验减轻到最低。</li>
+</ul>
+<h2 id="4-关于分片传输成功率："><a href="#4-关于分片传输成功率：" class="headerlink" title="4.关于分片传输成功率："></a>4.关于分片传输成功率：</h2><ul>
+<li>问题: 找到分片传输失败主要的原因是什么?</li>
+<li>答案: 移动网络的质量经常会发生的特殊变化,是传统的网络超时算法不能适应的，而这种不适应，非常容易导致传输超时带来的失败.需要寻求新的”传输超时算法”</li>
+</ul>
+<h2 id="5-关于失败重传策略："><a href="#5-关于失败重传策略：" class="headerlink" title="5.关于失败重传策略："></a>5.关于失败重传策略：</h2><ul>
+<li>问题: 失败重传策略是否最好,如果重传的成功率底还不如不传,浪费资源!</li>
+<li>答案: 还是由于移动互联网质量有时发生的特殊变化，所以当时失败重传策略的确有优化空间，下文会讲述如何优化这个点。</li>
+</ul>
+<h1 id="以下是技术的重点"><a href="#以下是技术的重点" class="headerlink" title="以下是技术的重点"></a>以下是技术的重点</h1><ol>
+<li><p>寻找适合当前网络的分片大小上限<br><a href="http://www.52im.net/data/attachment/forum/201612/26/115819ea133aiaquhygo3x.jpg" target="_blank" rel="external">(研究过程中的手稿)</a></p>
+<ul>
+<li>“鱼翅”项目将分片大小的计算逻辑抽象成独立的复杂模块,叫它 SSCM.专门负责根据一个文件的已传输分片的统计数据来计算下一个待发送分片的大小，这样就实现了“自适应动态根据网络现状调整分片大小”的效果.</li>
+<li>放弃了立即重试,选择类 TCP 超时重传机制的指数回退方式进行.(因为通过多次实验发现，移动互联网下做立刻重试是非常不明智的，重试失败率近 100%,移动互联网网络出现问题后的恢复周期远长于有线网)</li>
+</ul>
+</li>
+<li><p>单片发送成功率<br>传输失败的主要原因:移动网络的质量/带宽经常会发生“跳变”(可能前一秒钟网络发送速度是 5KB/S，而下一秒中就变成了 0.1KB/S),而不像有线网络那样的“渐变”<br>解决方案:</p>
+<ul>
+<li>放弃传统意义上的 RTO(超时重传时间)概念，转而提出 MNVT（ Max Net Vacuum Time，最大网络真空时间）概念</li>
+<li>在一个分片上传过程中，我们放弃了传统意义的请求 RTO 超时机制，转而在发出上传请求后，启动一个独立线程去监测出现的 NVT 是否超过了设定阈值（ MNVT），我们的 MNVT 也是个实验经验值，一直根据运营数据在持续调整。</li>
+<li>MNVT 的单一衡量标准，修改为“ MNVT( 最大连续真空时间 )”和“ MSNVT( 最大累计真空时间 )”，其中 MNVT &lt; MSNVT。</li>
+<li>首先是后来经过大量测试，发现有不少网络下都是连续真空出现了 10s 了，又恢复了几个字节的极小数据传输，而后又连续真空 10 来秒，这样一来传输一个文件（图片）要花特别特别长的时间，即便最终成功用户也是很难接受的；所以引入了 MSNVT，即一个分片传输过程中，所有发生过的 NVT 的累加值为累计真空时间 SNVT，其上限为 MSNVT，若 SNVT 达到了 MSNVT，分片传输也宣告失败。</li>
+<li>分片失败后的重试间隔除了指数回退（ Ns\2Ns\4Ns），再增加一个“有效重试”检查。所谓“有效”就是每一次重试时检查一下当前网络是否断开，如果是断开的状态，就不做重试（因为此时的“重试”是无效的，根本不会发送），而是继续等待一个相同时间间隔，最长等待到一个上限时间 Xs，如果还是网络断开的状态，就认为“这一次重试放弃”，直接进入下一档（例如 20s）的回退间隔</li>
+</ul>
+</li>
+</ol>
+<p>注:网络真空时间 NVT 就是指，应用层发起的文件传输过程中，通过监控网卡状态，发现的传输层连续没有任何数据发送的时间长度</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/27/cocoapods/" rel="next" title="cocoapods">
+                <i class="fa fa-chevron-left"></i> cocoapods
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Jane" />
+          <p class="site-author-name" itemprop="name">Jane</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#优化方案主要需要考虑的点"><span class="nav-number">1.</span> <span class="nav-text">优化方案主要需要考虑的点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-必须分小片传输一个文件（图片）："><span class="nav-number">1.1.</span> <span class="nav-text">1.必须分小片传输一个文件（图片）：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-不同类型的移动互联网下的分片初始大小应该有所不同："><span class="nav-number">1.2.</span> <span class="nav-text">2.不同类型的移动互联网下的分片初始大小应该有所不同：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-在上传一个文件（图片）的过程中，应当尽可能动态增大分片大小（例如，后一片是前一片的-N-倍），以减少分片数量："><span class="nav-number">1.3.</span> <span class="nav-text">3.在上传一个文件（图片）的过程中，应当尽可能动态增大分片大小（例如，后一片是前一片的 N 倍），以减少分片数量：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-确定每个分片是否要继续增大之前，要检查网络类型是否发生了变化，一旦跟前一片传输的网络变得不同，则新的一片不能继续增大而是转而用新网络类型下的初始分片大小进行传输："><span class="nav-number">1.4.</span> <span class="nav-text">4.确定每个分片是否要继续增大之前，要检查网络类型是否发生了变化，一旦跟前一片传输的网络变得不同，则新的一片不能继续增大而是转而用新网络类型下的初始分片大小进行传输：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-分片一旦传输失败，应当使用该网络下的初始分片大小进行重试："><span class="nav-number">1.5.</span> <span class="nav-text">5.分片一旦传输失败，应当使用该网络下的初始分片大小进行重试：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要解决的主要问题"><span class="nav-number">2.</span> <span class="nav-text">需要解决的主要问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-关于”长连接”"><span class="nav-number">2.1.</span> <span class="nav-text">1.关于”长连接”:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-关于分片大小："><span class="nav-number">2.2.</span> <span class="nav-text">2.关于分片大小：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关于分片对于速度的影响："><span class="nav-number">2.3.</span> <span class="nav-text">3.关于分片对于速度的影响：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-关于分片传输成功率："><span class="nav-number">2.4.</span> <span class="nav-text">4.关于分片传输成功率：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-关于失败重传策略："><span class="nav-number">2.5.</span> <span class="nav-text">5.关于失败重传策略：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#以下是技术的重点"><span class="nav-number">3.</span> <span class="nav-text">以下是技术的重点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jane</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
